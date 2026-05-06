@@ -8,10 +8,11 @@
 </head>
 <body>
 
+
 <div class="mk-root">
 
   <!-- NAV -->
-  <nav class="mk-nav">
+  <nav class="mk-nav" aria-label="Menú Principal">
     <span class="mk-brand">MarrakechEnjoy</span>
     <div class="mk-links">
       <a href="#">Lugares</a>
@@ -29,8 +30,8 @@
       <p>Una ciudad llena de cultura y tradición</p>
       <button class="mk-btn-gold" onclick="abrirFormulario()">Enviar Postal</button>
     </div>
-    <button class="mk-arrow mk-arrow-l">&#8592;</button>
-    <button class="mk-arrow mk-arrow-r">&#8594;</button>
+    <button class="mk-arrow mk-arrow-l" aria-label="Imagen anterior">&#8592;</button>
+    <button class="mk-arrow mk-arrow-r" aria-label="Imagen siguiente">&#8594;</button>
   </div>
 
   <!-- CARDS -->
@@ -52,7 +53,7 @@
     <img src="img/mezquita.jpg" class="mk-gallery-img" alt="Mezquita Koutoubia">
     <img src="img/madrasa.jpg" class="mk-gallery-img" alt="Madrasa Ben Youssef">
     <img src="img/calles.jpg" class="mk-gallery-img" alt="Calles típicas">
-    <img src="img/gato.jpg" class="mk-gallery-img" alt="Gato callejero">
+    <img src="img/gato.jpg" class="mk-gallery-img" alt="Gato callejero en un puesto del zoco">
     <img src="img/desayuno.jpg" class="mk-gallery-img" alt="Desayuno típico">
     <img src="img/te.jpg" class="mk-gallery-img" alt="Té moruno">
   </div>
@@ -60,7 +61,7 @@
   <!-- MODAL VIDEO -->
   <div id="modalVideo" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="cerrarTodo()">✕</button>
+      <button class="modal-close" onclick="cerrarTodo()" aria-label="Cerrar ventana">✕</button>
       <video id="miVideo" controls>
         <source src="video/marrakech.mp4" type="video/mp4">
         <track kind="subtitles" src="video/marrakech.vtt" srclang="es" label="Español">
@@ -72,7 +73,7 @@
   <!-- MODAL AUDIO -->
   <div id="modalAudio" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="cerrarTodo()">✕</button>
+      <button class="modal-close" onclick="cerrarTodo()" aria-label="Cerrar ventana">✕</button>
       <audio id="miAudio" controls>
         <source src="audio/marrakech.mp3" type="audio/mpeg">
         <track kind="subtitles" src="audio/marrakech.vtt" srclang="es" label="Español" default>
@@ -84,16 +85,17 @@
   <!-- MODAL FORMULARIO -->
   <div id="modalForm" class="modal">
     <div class="modal-content modal-form">
-      <button class="modal-close" onclick="cerrarTodo()">✕</button>
+      <button class="modal-close" onclick="cerrarTodo()" aria-label="Cerrar ventana">✕</button>
 
       <form id="formPostal" onsubmit="enviarPostal(event)">
         <h2 style="font-family:'Playfair Display',sans-serif;color:#3E2008;margin-bottom:4px">Enviar Postal</h2>
 
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+        <input type="text" id="nombre" name="nombre" required aria-required="true" placeholder="Tu nombre">
+        <span id="error-nombre" class="error"></span>
 
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+        <input type="email" id="email" name="email" required aria-required="true" placeholder="tu@email.com">
 
         <label for="inputArchivo">Imagen de la postal</label>
 
