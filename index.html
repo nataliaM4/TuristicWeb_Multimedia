@@ -11,7 +11,6 @@
 
 <div class="mk-root">
 
- <header>
   <!-- NAV -->
   <nav class="mk-nav" aria-label="Menú Principal">
     <span class="mk-brand">MarrakechEnjoy</span>
@@ -21,9 +20,7 @@
       <button type="button" onclick="abrirFormulario()">Postal</button>
     </div>
   </nav>
- </header>
 
- <main>
   <!-- HERO -->
   <div class="mk-hero">
     <img id="hero-img" src="img/mezquita.jpg" class="mk-hero-img" alt="Mezquita Koutoubia">
@@ -77,7 +74,7 @@
   <div id="modalAudio" class="modal">
     <div class="modal-content">
       <button class="modal-close" onclick="cerrarTodo()" aria-label="Cerrar ventana">✕</button>
-      <audio id="miAudio" controls aria-describedby="subtitulo-audio">
+      <audio id="miAudio" controls >
         <source src="audio/marrakech.mp3" type="audio/mpeg">
         <track kind="subtitles" src="audio/marrakech.vtt" srclang="es" label="Español" default>
       </audio>
@@ -123,8 +120,7 @@
 
   <!-- TOAST -->
   <output id="toast" aria-live="polite">✅ &nbsp; ¡Postal enviada correctamente!</output>
-  </main>
-
+  
   <footer>
     Práctica 3 Multimedia 2026 - Natalia Méndez Barrios
   </footer>
