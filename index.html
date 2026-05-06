@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarrakechEnjoy</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="mk-root">
+
+  <!-- NAV -->
+  <nav class="mk-nav">
+    <span class="mk-brand">MarrakechEnjoy</span>
+    <div class="mk-links">
+      <a href="#">Lugares</a>
+      <a href="#">Experiencia</a>
+      <button type="button" onclick="abrirFormulario()">Postal</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="mk-hero">
+    <img id="hero-img" src="img/mezquita.jpg" class="mk-hero-img" alt="Mezquita Koutoubia">
+    <div class="mk-hero-fade"></div>
+    <div class="mk-hero-text">
+      <h1>Descubre Marrakech</h1>
+      <p>Una ciudad llena de cultura y tradición</p>
+      <button class="mk-btn-gold" onclick="abrirFormulario()">Enviar Postal</button>
+    </div>
+    <button class="mk-arrow mk-arrow-l">&#8592;</button>
+    <button class="mk-arrow mk-arrow-r">&#8594;</button>
+  </div>
+
+  <!-- CARDS -->
+  <div class="mk-section">
+    <div class="mk-cards">
+      <button class="mk-card" type="button" onclick="abrirVideo()">
+        <div class="mk-card-icon">🎥</div>
+        <p>Ver vídeo</p>
+      </button>
+      <button class="mk-card" type="button" onclick="abrirAudio()">
+        <div class="mk-card-icon">🎧</div>
+        <p>Escuchar audio</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- GALERÍA -->
+  <div class="mk-gallery">
+    <img src="img/mezquita.jpg" class="mk-gallery-img" alt="Mezquita Koutoubia">
+    <img src="img/madrasa.jpg" class="mk-gallery-img" alt="Madrasa Ben Youssef">
+    <img src="img/calles.jpg" class="mk-gallery-img" alt="Calles típicas">
+    <img src="img/gato.jpg" class="mk-gallery-img" alt="Gato callejero">
+    <img src="img/desayuno.jpg" class="mk-gallery-img" alt="Desayuno típico">
+    <img src="img/te.jpg" class="mk-gallery-img" alt="Té moruno">
+  </div>
+
+  <!-- MODAL VIDEO -->
+  <div id="modalVideo" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="cerrarTodo()">✕</button>
+      <video id="miVideo" controls>
+        <source src="video/marrakech.mp4" type="video/mp4">
+        <track kind="subtitles" src="video/marrakech.vtt" srclang="es" label="Español">
+        <track kind="descriptions" src="video/marrakech-desc.vtt" srclang="es" label="Descripción">
+      </video>
+    </div>
+  </div>
+
+  <!-- MODAL AUDIO -->
+  <div id="modalAudio" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="cerrarTodo()">✕</button>
+      <audio id="miAudio" controls>
+        <source src="audio/marrakech.mp3" type="audio/mpeg">
+        <track kind="subtitles" src="audio/marrakech.vtt" srclang="es" label="Español" default>
+      </audio>
+      <div id="subtitulo-audio"></div>
+    </div>
+  </div>
+
+  <!-- MODAL FORMULARIO -->
+  <div id="modalForm" class="modal">
+    <div class="modal-content modal-form">
+      <button class="modal-close" onclick="cerrarTodo()">✕</button>
+
+      <form id="formPostal" onsubmit="enviarPostal(event)">
+        <h2 style="font-family:'Playfair Display',sans-serif;color:#3E2008;margin-bottom:4px">Enviar Postal</h2>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+
+        <label for="inputArchivo">Imagen de la postal</label>
+
+        <label class="file-label">
+          <span class="file-icon">📎</span>
+          <span id="texto-archivo">Seleccionar imagen de tu dispositivo…</span>
+          <input type="file" id="inputArchivo" name="archivo" accept="image/*" onchange="previsualizarImagen(this)">
+        </label>
+
+        <span id="nombre-archivo"></span>
+
+        <img id="preview-img" alt="Previsualización de la postal">
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí…"></textarea>
+
+        <button type="submit" class="btn-enviar">Enviar postal ✉️</button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast">✅ &nbsp; ¡Postal enviada correctamente!</div>
+
+  <footer>
+    Práctica 3 Multimedia 2026 - Natalia Méndez Barrios
+  </footer>
+
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
