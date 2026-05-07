@@ -285,6 +285,10 @@ footer {
   padding: 10px;
 }
 
+footer img {
+  margin-top: 10px;
+}
+
 :focus {
     outline: 3px solid #C8892A;
     outline-offset: 2px;
